@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="node_modules/axios/dist/axios.js"></script>
     <title>Prayer Times</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div>
-          <h1>Algeria, Mostaganem</h1>
-          <h1>15-05-2024</h1>
+          <h1 id="location-en">Algeria, Mostaganem</h1>
+          <h1 id="today">15-05-2024</h1>
         </div>
-        <select class="select_input" name="" id="">
+        <div>
+          <h1 id="location-ar">الجزائر، مستغانم</h1>
+        </div>
+        <select class="select_input" id="cities" onchange="getCityTimings()">
           <option value="" disabled selected>Select a City</option>
-          <option value="">Algeria, Mostaganem</option>
-          <option value="">Spain, Madrid</option>
-          <option value="">United States, New York</option>
+          <option value="Mostaganem">Algeria, Mostaganem</option>
+          <option value="Madrid">Spain, Madrid</option>
+          <option value="New York">United States, New York</option>
         </select>
       </div>
     </header>
@@ -30,8 +34,8 @@
             alt="Snowy Mountains"
           />
           <div class="card__content">
-            <h1 class="card__header">Duhr</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Duhr, ظهر</h1>
+            <h1 class="card__header" id="salat1">15:30</h1>
           </div>
         </div>
         <div class="card">
@@ -41,8 +45,8 @@
             alt="Desert"
           />
           <div class="card__content">
-            <h1 class="card__header">Asr</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Asr, عصر</h1>
+            <h1 class="card__header" id="salat2">15:30</h1>
           </div>
         </div>
         <div class="card">
@@ -52,8 +56,8 @@
             alt="Canyons"
           />
           <div class="card__content">
-            <h1 class="card__header">Maghreb</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Maghreb, مغرب</h1>
+            <h1 class="card__header" id="salat3">15:30</h1>
           </div>
         </div>
         <div class="card">
@@ -63,8 +67,8 @@
             alt="Snowy Mountains"
           />
           <div class="card__content">
-            <h1 class="card__header">Ishaa</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Ishaa, عشاء</h1>
+            <h1 class="card__header" id="salat4">15:30</h1>
           </div>
         </div>
         <div class="card">
@@ -74,8 +78,8 @@
             alt="Snowy Mountains"
           />
           <div class="card__content">
-            <h1 class="card__header">Fajr</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Fajr, فجر</h1>
+            <h1 class="card__header" id="salat5">15:30</h1>
           </div>
         </div>
         <div class="card">
@@ -85,8 +89,8 @@
             alt="Snowy Mountains"
           />
           <div class="card__content">
-            <h1 class="card__header">Sunrise</h1>
-            <h1 class="card__header">15:30</h1>
+            <h1 class="card__header">Sunrise, الشروق</h1>
+            <h1 class="card__header" id="sunrise">15:30</h1>
           </div>
         </div>
       </div>

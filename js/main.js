@@ -2,7 +2,6 @@ var d = new Date();
 let month = d.getMonth() + 1;
 let today = d.getDate() + '-' + month + '-' + d.getFullYear();
 
-
 function getCountry($city) {
     let countries = {
         "Mostaganem": "Algeria",
@@ -23,9 +22,9 @@ function translation(city) {
     return location[city];
 }
 
-
 function getCityTimings() {
     let city = document.getElementById("cities").value;
+    (city == "") ? city = "Mostaganem" : city = document.getElementById("cities").value;
     let country = getCountry(city);
     document.getElementById('location-en').innerHTML = country + ',' + ' ' + city;
     document.getElementById('location-ar').innerHTML = translation(city);
@@ -48,3 +47,4 @@ function getCityTimings() {
         })
 }
 
+getCityTimings();
